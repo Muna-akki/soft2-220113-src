@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "traverse.h"
+#include "./../include/traverse.h"
 
 
 int main(int argc, char **argv)
@@ -18,7 +18,15 @@ int main(int argc, char **argv)
     Node n10 = { .value =10, .left = NULL, .right = NULL };
     
     // 木を繋いでみる。木の形はページ参照
-    
+    n1.left = &n2;
+    n1.right = &n7;
+    n2.left = &n3;
+    n2.right = &n6;
+    n3.left = &n4;
+    n3.right = &n5;
+    n7.left = &n8;
+    n7.right = &n10;
+    n8.right = &n9;
     
     // 走査する
     traverse(&n1);
